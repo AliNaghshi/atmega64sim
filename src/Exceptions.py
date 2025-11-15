@@ -25,4 +25,9 @@ class LabelNotFound(Error):
         super().__init__("Label nit found", 105)
 
 
+class InvalidImmideate(Error):
+    def __init__(self):
+        super().__init__("invalide immidiate", 105)
+
+
 

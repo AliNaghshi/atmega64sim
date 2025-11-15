@@ -1,4 +1,3 @@
-import re
 import memory as mem
 from Exceptions import *
 
@@ -12,6 +11,9 @@ def set_status_register(a):
         mem.status_reg[2] = 1
     # implement the rest
 
+
+def nop():
+    pass
 
 def lds(reg_num, addrs):
     if addrs not in mem.memory_external:

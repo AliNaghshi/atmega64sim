@@ -1,3 +1,4 @@
+import memory
 try:
     inp = input()
     inputFile = open("{}".format(inp), "r")
@@ -20,6 +21,3 @@ for i in lst:
         instructions.append(j[0])
 print(instructions)
 
-memory = dict()
-status_reg = [0 for i in range(8)]
-reg_file = [0 for _ in range(32)]

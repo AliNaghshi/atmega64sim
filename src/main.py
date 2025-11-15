@@ -1,18 +1,25 @@
-
-from os import error
-
-
 try:
     inp = input()
     inputFile = open("{}".format(inp), "r")
 except FileNotFoundError:
     print("there is no such file in this directory")
-    raise error
+    raise FileNotFoundError()
 
+lst = []
 try:
     for line in inputFile:
-        s_line = line.split(" ")
-        print(s_line)
+        lst.append(line)
 except:
     inputFile.close()
 
+instructions = ['LDS', 'ADD', 'CP', 'BRCS', 'BREQ', 'IN', 'COM', 'OUT', 'JMP', 'ELSE', 'ANDI', 'LDI', 'MUL', 'OR', 'STS', 'END', 'NOP']
+print(lst)
+for i in lst:
+    j = i.split(" ")
+    if j[0] not in instructions:
+        instructions.append(j[0])
+print(instructions)
+
+memory = dict()
+status_reg = [0 for i in range(8)]
+reg_file = [0 for _ in range(32)]
